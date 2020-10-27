@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TPF</string>
+    <string name="chosen_thing">Chosen Thing:</string>
 </resources>

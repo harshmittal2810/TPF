@@ -3,6 +3,8 @@ plugins {
     id(BuildConfiguration.Plugins.kotlinAndroid)
     id(BuildConfiguration.Plugins.kotlinAndroidExtensions)
     id(BuildConfiguration.Plugins.kotlinKapt)
+    id(BuildConfiguration.Plugins.hiltPlugin)
+
 }
 
 android {
@@ -23,6 +25,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "\"https://5e510330f2c0d300147c034c.mockapi.io/\"")
     }
 
 
@@ -87,6 +90,21 @@ dependencies {
     kapt(Libraries.Arch.lifeCycleCompiler)
     implementation(Libraries.activityKtx)
     //endregion
+
+    implementation(Libraries.Network.moshiConverter)
+    implementation(Libraries.Network.okHttpLoggingInterceptor)
+
+    //region: Dagger
+    implementation(Libraries.Hilt.dagger)
+    implementation(Libraries.Hilt.hiltAndroid)
+    implementation(Libraries.Hilt.hiltCommon)
+    implementation(Libraries.Hilt.hiltLifeCycle)
+    implementation(Libraries.Hilt.hiltWorker)
+    kapt(Libraries.Hilt.daggerCompiler)
+    kapt(Libraries.Hilt.hiltCompiler)
+    kapt(Libraries.Hilt.hiltAndroidCompiler)
+    //endregion
+
 
     //region Navigation Components
     implementation(Libraries.Navigation.navigationFragment)

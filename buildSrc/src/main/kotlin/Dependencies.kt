@@ -59,7 +59,6 @@ object Libraries {
         const val sl4j = "1.7.30"
         const val logback = "2.0.0"
         const val okhttpLoggingInterceptor = "4.3.1"
-        const val chuckNetworkInterceptor = "1.1.0"
         const val workManager = "2.4.0"
         const val dagger2 = "2.26"
         const val daggerHiltAndroidVersion = "2.28-alpha"
@@ -67,6 +66,7 @@ object Libraries {
         const val archComponents = "2.2.0"
         const val navigation = "2.3.0"
         const val kotlinxSerializationConverter = "0.7.0"
+        const val moshiConverter = "2.6.2"
         const val stateMachine = "0.2.0"
         const val activityKtx = "1.2.0-alpha06"
         const val glide = "4.11.0"
@@ -96,12 +96,26 @@ object Libraries {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val kotlinxSerialisationHeaderInterceptor =
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.kotlinxSerializationConverter}"
-        const val chuckNetworkInterceptor =
-            "com.readystatesoftware.chuck:library:${Versions.chuckNetworkInterceptor}"
+        const val moshiConverter =
+            "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}"
     }
 
     object Design {
         const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
+    }
+
+    object Hilt {
+        const val dagger = "com.google.dagger:dagger:${Versions.dagger2}"
+        const val hiltAndroid =
+            "com.google.dagger:hilt-android:${Versions.daggerHiltAndroidVersion}"
+        const val hiltCommon = "androidx.hilt:hilt-common:${Versions.daggerHiltVersion}"
+        const val hiltLifeCycle =
+            "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.daggerHiltVersion}"
+        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger2}"
+        const val hiltAndroidCompiler =
+            "com.google.dagger:hilt-android-compiler:${Versions.daggerHiltAndroidVersion}"
+        const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.daggerHiltVersion}"
+        const val hiltWorker = "androidx.hilt:hilt-work:${Versions.daggerHiltVersion}"
     }
 
     object Glide {
